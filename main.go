@@ -30,6 +30,8 @@ func main() {
 
 	mux.HandleFunc("GET /api/healthz", handlerReadiness)
 
+	mux.HandleFunc("POST /api/validate_chirp", handlerValidate)
+
 	srv := &http.Server{
 
 		Handler: mux,
